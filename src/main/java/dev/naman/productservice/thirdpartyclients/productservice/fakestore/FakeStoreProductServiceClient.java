@@ -36,18 +36,6 @@ public class FakeStoreProductServiceClient implements ThirdPartyProductServiceCl
         this.productRequestBaseUrl = fakeStoreApiUrl + fakeStoreProductsApiPath;
     }
 
-    private GenericProductDto convertFakeStoreProductIntoGenericProduct(FakeStoreProductDto fakeStoreProductDto){
-        GenericProductDto product = new GenericProductDto();    //the type of return in our system, should be different
-        product.setId(fakeStoreProductDto.getId());
-        product.setTitle(fakeStoreProductDto.getTitle());
-        product.setPrice(fakeStoreProductDto.getPrice());
-        product.setCategory(fakeStoreProductDto.getCategory());
-        product.setDescription(fakeStoreProductDto.getDescription());
-        product.setImage(fakeStoreProductDto.getImage());
-
-        return product;
-    }
-
     public FakeStoreProductDto[] getAllProducts(){
         RestTemplate restTemplate = restTemplateBuilder.build();
 
